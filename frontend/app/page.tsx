@@ -38,7 +38,7 @@ export default function Home() {
     setShowResult(false);
 
     try {
-      const response = await fetch('http://localhost:5000/api/roast', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/roast`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -89,7 +89,7 @@ export default function Home() {
     setLoading(true);
     
     try {
-      const response = await fetch('http://localhost:5000/api/roast', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/roast`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
