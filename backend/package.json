@@ -1,0 +1,25 @@
+{
+  "name": "roastme-ai-backend",
+  "version": "1.0.0",
+  "description": "Backend API for RoastMe AI - Get roasted by AI",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "groq",
+    "ai",
+    "roast",
+    "comedy"
+  ],
+  "author": "Hrishikesh",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "groq-sdk": "^0.8.0"
+  }
+}

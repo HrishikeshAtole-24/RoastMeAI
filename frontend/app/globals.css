@@ -1,0 +1,246 @@
+/* ============================================
+   RoastMe AI - Global Styles
+   Custom CSS - No Tailwind/Bootstrap
+   ============================================ */
+
+:root {
+  /* Colors */
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #12121a;
+  --bg-card: #1a1a25;
+  --bg-card-hover: #222230;
+  
+  /* Accent Colors */
+  --fire-orange: #ff6b35;
+  --fire-red: #ff3d3d;
+  --fire-yellow: #ffb835;
+  --fire-gradient: linear-gradient(135deg, #ff6b35 0%, #ff3d3d 50%, #ffb835 100%);
+  
+  /* Level Colors */
+  --soft-color: #4ecdc4;
+  --soft-bg: rgba(78, 205, 196, 0.1);
+  --medium-color: #ffd93d;
+  --medium-bg: rgba(255, 217, 61, 0.1);
+  --brutal-color: #ff3d3d;
+  --brutal-bg: rgba(255, 61, 61, 0.1);
+  
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0b0;
+  --text-muted: #666680;
+  
+  /* Borders */
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-glow: rgba(255, 107, 53, 0.3);
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-fire: 0 0 40px rgba(255, 107, 53, 0.2);
+  
+  /* Fonts */
+  --font-heading: var(--font-poppins), 'Poppins', sans-serif;
+  --font-body: var(--font-inter), 'Inter', sans-serif;
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+/* Selection */
+::selection {
+  background: var(--fire-orange);
+  color: white;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--fire-orange);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--fire-red);
+}
+
+/* Focus Styles */
+:focus-visible {
+  outline: 2px solid var(--fire-orange);
+  outline-offset: 2px;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes fireGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.4),
+                0 0 40px rgba(255, 107, 53, 0.2),
+                0 0 60px rgba(255, 107, 53, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 107, 53, 0.6),
+                0 0 60px rgba(255, 107, 53, 0.4),
+                0 0 90px rgba(255, 107, 53, 0.2);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 15px rgba(255, 107, 53, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 30px rgba(255, 107, 53, 0.8)) drop-shadow(0 0 50px rgba(255, 61, 61, 0.4));
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+  
+  /* Improve touch targets */
+  button, 
+  input, 
+  textarea,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Prevent iOS zoom on input focus */
+@media screen and (max-width: 768px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
